@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Proyecto 1",
+    "description": "Descripción corta del proyecto 1",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSEm-TsBL3xffB0McZMGyU0m3FDtzn3q-EBr_ySO5r_v3plG8TcONL-tDoNxEGf2b2OVuKaHIme6lBVQC4U4fTqzvZMCkOswlW2QgM50JU",
+    "link": "#",
+    "tags" : ["tag1", "tag2", "tag3"]
+  },
+  {
+    "name": "Proyecto 2",
+    "description": "Descripción corta del proyecto 2",
+    "image": "https://via.placeholder.com/400x300",
+    "link": "#",
+    "tags" : ["tag1", "tag2", "tag3"]
+  },
+  {
+    "name": "Proyecto 3",
+    "description": "Descripción corta del proyecto 3",
+    "image": "https://via.placeholder.com/400x300",
+    "link": "#",
+    "tags" : ["tag1", "tag2", "tag3"]
+  },
+  {
+    "name": "Proyecto 4",
+    "description": "Descripción corta del proyecto 4",
+    "image": "https://via.placeholder.com/400x300",
+    "link": "#",
+    "tags" : ["tag1", "tag2", "tag3"]
+  }
+]

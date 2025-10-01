@@ -1,0 +1,64 @@
+<header
+  class="flex justify-between items-center px-6 py-4 sticky top-0 z-50 bg-black font-barlow-condensed font-extrabold">
+  <!-- LOGO -->
+  <a href="/" class="text-2xl font-anton font-extrabold tracking-wide lowercase text-white no-underline">
+    Portfolio
+  </a>
+
+  <!-- BOTÓN HAMBURGUESA (input primero, fuera del div) -->
+  <input id="menu-toggle" type="checkbox" class="hidden peer" />
+  <label for="menu-toggle" class="flex flex-col justify-center items-center w-10 h-10 cursor-pointer md:hidden">
+    <span class="block w-8 h-0.5 bg-white mb-1 transition-all"></span>
+    <span class="block w-8 h-0.5 bg-white mb-1 transition-all"></span>
+    <span class="block w-8 h-0.5 bg-white transition-all"></span>
+  </label>
+
+  <!-- NAV ÚNICO -->
+  <nav
+    class="absolute top-full left-0 w-full flex-col items-center gap-4 py-6 bg-black hidden peer-checked:flex md:flex md:flex-row md:static md:w-auto md:bg-transparent md:py-0 md:gap-8">
+    <a href="/" class="text-white no-underline uppercase tracking-[7px] italic font-bold hover:text-red-600">
+      Home
+    </a>
+
+    <!-- Dropdown adaptado para móvil -->
+    <div class="relative w-full md:w-auto group">
+      <input type="checkbox" id="projects-toggle" class="hidden peer" />
+
+      <label for="projects-toggle"
+        class="flex justify-center md:justify-start items-center w-full md:w-auto cursor-pointer text-white uppercase tracking-[7px] italic font-bold hover:text-red-600">
+        <a href="/projects">
+          Projects
+        </a>
+        <span class="md:hidden ml-2">▼</span>
+      </label>
+
+      <div
+        class="hidden peer-checked:flex flex-col p-2 gap-2 bg-black w-full md:w-auto md:absolute md:left-0 md:mt-2 md:hidden md:group-hover:flex">
+        
+        <a href="/articles/amogus-script/"
+          class="text-white uppercase tracking-[5px] italic font-bold hover:text-red-600 p-2 text-center md:text-left">
+          Amogus Script
+        </a>
+        <a href="#"
+          class="text-white uppercase tracking-[5px] italic font-bold hover:text-red-600 p-2 text-center md:text-left">
+          Style
+        </a>
+        <a href="#"
+          class="text-white uppercase tracking-[5px] italic font-bold hover:text-red-600 p-2 text-center md:text-left">
+          Tech
+        </a>
+      </div>
+    </div>
+
+    <a href="/projects/sonic" class="text-white no-underline uppercase tracking-[7px] italic font-bold hover:text-red-600">
+      Sonic Youth
+    </a>
+    <a href="/about" class="text-white no-underline uppercase tracking-[7px] italic font-bold hover:text-red-600">
+      About me
+    </a>
+    <a href="/contact" class="text-white no-underline uppercase tracking-[7px] italic font-bold hover:text-red-600">
+      Contact
+    </a>
+  </nav>
+</header>
+

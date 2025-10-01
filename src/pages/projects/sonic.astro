@@ -1,0 +1,32 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+
+const title = "Sonic Youth";
+const heroImage = "https://upload.wikimedia.org/wikipedia/commons/6/68/Sonic_Youth_live_20050707.jpg";
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+
+  <ArticleText>
+    <p><strong>sabukaru.online</strong> connects people with culture, products with context, subcultures with eras, and artists with the world.</p>
+    <p>The magazine is based in Tokyo; the content is global.</p>
+    <p>The inner sabukaru team spans a worldwide network of industry insiders, experts, writers, and creatives.</p>
+  </ArticleText>
+
+  <ArticleImage 
+    src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac8c5156-fe9f-4fe7-ae6b-45a2ff2b5dbf_1000x635.jpeg"
+    alt="Sonic Youth performance"
+  />
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <p><strong>sabukaru.online</strong> connects people with culture, products with context, subcultures with eras, and artists with the world.</p>
+    <p>The magazine is based in Tokyo; the content is global.</p>
+    <p>The inner sabukaru team spans a worldwide network of industry insiders, experts, writers, and creatives.</p>
+  </ArticleText>
+
+</ArticleLayout>

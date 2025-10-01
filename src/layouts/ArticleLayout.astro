@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+interface Props {
+  title: string;
+  heroImage: string;
+  heroAlt?: string;
+}
+
+const { title, heroImage, heroAlt = title } = Astro.props;
+---
+
+<Layout title={title}>
+  <!-- HERO -->
+  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <img 
+      src={heroImage}
+      alt={heroAlt}
+      class="absolute inset-0 w-full h-full object-cover brightness-75"
+    />
+    <h1 class="relative text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white uppercase tracking-widest text-center drop-shadow-lg px-4">
+      {title}
+    </h1>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <article class="max-w-4xl mx-auto px-6 py-16 flex flex-col space-y-12">
+    <slot />
+  </article>
+</Layout>
