@@ -1,0 +1,115 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+
+const title = "Spotify to Tidal Playlist Migrator";
+const heroImage = "https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifytotidal-hero_1.png?updatedAt=1759835010438"; 
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+  <ArticleText>
+    <p>
+      <strong>Spotify to Tidal Playlist Migrator</strong> is a web application designed to help users
+      seamlessly transfer their curated playlists from Spotify to Tidal. It addresses a common
+      frustration for music enthusiasts who use multiple streaming platforms.
+    </p>
+    <p>
+      By automating the migration process, the tool saves time, ensures accurate replication of
+      playlists, and provides a smooth, hassle-free experience for managing music across platforms.
+    </p>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+    <p>
+      The application securely connects to Spotify and Tidal accounts via <strong>OAuth</strong>
+      authentication. Users can select which playlists to migrate, and the system performs intelligent
+      song matching using <strong>ISRC codes</strong> or <strong>fuzzy matching</strong> for titles
+      and artists when exact identifiers are unavailable.
+    </p>
+    <p>
+      Matched playlists are automatically created in Tidal with the corresponding tracks. The migration
+      runs in the background to maintain a smooth user experience. This project demonstrates best practices
+      in API integration, asynchronous task handling, and lightweight frontend design.
+    </p>
+  </ArticleText>
+
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+    <div class="w-full max-w-xs aspect-[3/5]">
+      <ArticleImage
+        src="https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-home.png?updatedAt=1759834686958"
+        alt="Home User Interface"
+        class="w-full h-full object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+
+    <div class="w-full max-w-xs aspect-[3/5]">
+      <ArticleImage
+        src="https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-playlists.png?updatedAt=1759834687079"
+        alt="Playlist Overview"
+        class="w-full h-full object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+
+    <div class="w-full max-w-xs aspect-[3/5]">
+      <ArticleImage
+        src="https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-migration.png?updatedAt=1759834686960"
+        alt="Migrated Playlist"
+        class="w-full h-full object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+  </div>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Technical Stack</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Backend:</strong> Python with <strong>FastAPI</strong> and <strong>Uvicorn</strong> to handle authentication, API calls, and playlist migration logic.</li>
+      <li><strong>Frontend:</strong> HTML5 with <strong>Jinja2</strong>, <strong>TailwindCSS</strong>, and <strong>Alpine.js</strong> for a responsive, lightweight interface.</li>
+      <li><strong>APIs & Libraries:</strong> Spotipy (Spotify), TidalAPI (Tidal), RapidFuzz for fuzzy matching, and python-dotenv for secure environment variables.</li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Key Learnings</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Practical experience with third-party API integrations and OAuth 2.0 authentication flows.</li>
+      <li>Understanding the importance of data quality and normalization when matching content across platforms.</li>
+      <li>Implementing background processes for long-running tasks to maintain smooth user experience.</li>
+      <li>Designing a lightweight, dynamic frontend without heavy JavaScript frameworks, leveraging Jinja2 and Alpine.js.</li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Repositories</h2>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/spotify-to-tidal-playlist"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+        >Playlist Migrator Repository</a>
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <p class="italic text-gray-600">
+      This project demonstrates the power of combining backend efficiency, smart data matching, 
+      and lightweight frontend design to create a seamless user experience for music enthusiasts
+      managing content across multiple streaming platforms.
+    </p>
+  </ArticleText>
+</ArticleLayout>

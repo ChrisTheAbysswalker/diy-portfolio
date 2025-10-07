@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
 
 const title = "About Me";
 ---
@@ -7,7 +8,7 @@ const title = "About Me";
 <Layout title={title}>
 
   <!-- ARTICLE CONTENT -->
-  <article class="max-w-5xl mx-auto px-6 py-16 flex flex-col space-y-12">
+  <article class="max-w-4xl mx-auto px-6 py-16 flex flex-col space-y-12">
 
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white uppercase tracking-widest text-center drop-shadow-lg px-4">
       About Me
@@ -15,19 +16,36 @@ const title = "About Me";
 
     <!-- TEXTO INICIAL -->
     <div class="space-y-4 text-lg md:text-xl leading-relaxed text-gray-300">
-      <p><strong>sabukaru.online</strong> connects people with culture, products with context, subcultures with eras, and artists with the world.</p>
-      <p>The magazine is based in Tokyo; the content is global.</p>
-      <p>The inner sabukaru team spans a worldwide network of industry insiders, experts, writers, and creatives.</p>
+      <p>I'm a <strong>software developer</strong> based in Nogales, Sonora, with a passion for building meaningful digital experiences.</p>
+      <p>My work focuses primarily on <strong>web development</strong>, though I also enjoy exploring <strong>mobile</strong> and <strong>backend</strong> technologies.</p>
+      <p>I’m driven by curiosity and creativity — I love designing interfaces that feel intuitive and bring ideas to life through clean, maintainable code.</p>
+      <p>Some of my favorite projects include:</p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>
+          <a href="https://github.com/ChrisTheAbysswalker/meownder-frontend" class="text-indigo-500 hover:underline font-medium">
+            Meownder
+          </a> — A playful, cat-themed web application inspired by Tinder’s swiping concept.
+        </li>
+        <li>
+          <a href="https://github.com/ChrisTheAbysswalker/Meownder-Backend" class="text-indigo-500 hover:underline font-medium">
+            Meownder Backend
+          </a> — A REST API built with Go and the Gin framework to support the Meownder experience.
+        </li>
+      </ul>
+      <p>I'm always looking for new challenges and opportunities to learn, grow, and collaborate on projects that make a difference.</p>
+      <p>Thank you for visiting my portfolio!</p>
     </div>
 
-    <!-- IMAGEN CENTRAL (Opcional) -->
-    <img 
-      src="https://substackcdn.com/image/fetch/$s_!5j8R!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac8c5156-fe9f-4fe7-ae6b-45a2ff2b5dbf_1000x635.jpeg" 
-      alt="Sonic Youth" 
-      class="w-full rounded-2xl shadow-lg object-cover"
-    />
+    <!-- IMAGEN CENTRAL -->
+    <div class="flex justify-center">
+      <img 
+        class="rounded-full w-55 h-55 md:w-72 md:h-72 border-4 border-gray-300 shadow-lg shadow-amber-900/30 transition-transform duration-300 hover:scale-105" 
+        src="https://ik.imagekit.io/ur4olhqhr/profile-pic.jpg?updatedAt=1759829344965" 
+        alt="Profile Picture" 
+      />
+    </div>
 
-    <div class="h-px bg-white"></div>
+    <ArticleDivider />
 
   </article>
 

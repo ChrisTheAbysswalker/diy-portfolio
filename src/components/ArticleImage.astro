@@ -2,12 +2,20 @@
 interface Props {
   src: string;
   alt: string;
+  class?: string; 
+  center?: boolean; 
+  width?: string; // Ej: 'w-1/2', 'w-64', 'max-w-xs', 'max-w-md', 'max-w-xl', 'max-w-full'
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, class: customClass, center = false, width = "w-full" } = Astro.props;
 ---
-<img 
-  src={src}
-  alt={alt}
-  class="w-full rounded-2xl shadow-lg object-cover"
-/>
+
+<div class={`
+  ${center ? "flex justify-center" : ""}
+`}>
+  <img
+    src={src}
+    alt={alt}
+    class={`${width} rounded-2xl shadow-lg object-cover ${customClass || ""}`}
+  />
+</div>

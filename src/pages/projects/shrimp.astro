@@ -1,0 +1,107 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+
+const title = "Shrimp Prices";
+const heroImage =
+  "https://github.com/ChrisTheAbysswalker/precio-camaron/raw/main/docs/img1.png";
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+  <ArticleText>
+    <p>
+      <strong>Shrimp Prices</strong> is a data analysis project focused on studying and predicting shrimp price trends between 1991 and 2021.
+      Using historical data, it applies <strong>Polynomial Regression</strong> to model the relationship between monthly changes and market prices.
+    </p>
+  </ArticleText>
+
+  <ArticleText>
+    <p>
+      The project is built with <strong>Python</strong>, leveraging libraries such as
+      <strong> NumPy</strong>, <strong>Pandas</strong>, <strong>Scikit-learn</strong>, and
+      <strong>Matplotlib</strong> for data processing, statistical modeling, and visualization.
+      It demonstrates how machine learning can be applied to real-world economic data to uncover
+      patterns and forecast future price behavior.
+    </p>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+    <p>
+      This analysis explores shrimp price fluctuations using data collected between 1991 and 2021.
+      The dataset includes monthly price changes, which were transformed and processed to train a
+      <strong> polynomial regression model</strong> capable of capturing non-linear relationships
+      between time and price variation.
+    </p>
+    <p>
+      The workflow includes data cleaning, feature transformation, model training and evaluation,
+      followed by visualization of both real and predicted values to assess performance.
+      The model’s accuracy was evaluated using <strong>Mean Squared Error (MSE)</strong>.
+    </p>
+  </ArticleText>
+
+  <ArticleImage
+    src="https://github.com/ChrisTheAbysswalker/precio-camaron/raw/main/docs/img1.png"
+    alt="Polynomial Regression Plot - Shrimp Prices"
+    center={true}
+    width="max-w-lg"
+  />
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Technical Stack</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Python</strong> – Core language for data analysis and modeling.</li>
+      <li><strong>NumPy & Pandas</strong> – Data manipulation and statistical computation.</li>
+      <li><strong>Scikit-learn</strong> – Polynomial regression and model evaluation.</li>
+      <li><strong>Matplotlib</strong> – Data visualization and graphical representation.</li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+  
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Key Learnings</h2>
+    <ul class="list-disc pl-6 space-y-1">
+        <li>Applying polynomial regression to model non-linear relationships in real-world economic data.</li>
+        <li>Data preprocessing and feature engineering are crucial to improving prediction accuracy.</li>
+        <li>Visualizing data effectively helps to interpret trends and assess model performance.</li>
+        <li>Understanding the importance of train/test splits and evaluation metrics (MSE) for reliable predictions.</li>
+        <li>Leveraging Python libraries (NumPy, Pandas, Scikit-learn, Matplotlib) for end-to-end data analysis workflows.</li>
+    </ul>
+    </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Repository</h2>
+    <p>
+      Explore the source code and documentation on GitHub:
+    </p>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/precio-camaron"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+          >Shrimp Prices Repository</a
+        >
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <p class="italic text-gray-600">
+      This project serves as an example of applying statistical and machine learning techniques
+      to long-term economic data, highlighting how data science can provide insights into
+      market behavior and price prediction.
+    </p>
+  </ArticleText>
+</ArticleLayout>

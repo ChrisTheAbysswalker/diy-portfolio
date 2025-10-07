@@ -1,23 +1,20 @@
 [
   {
-    "name": "Proyecto 1",
-    "description": "Descripción corta del proyecto 1",
-    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSEm-TsBL3xffB0McZMGyU0m3FDtzn3q-EBr_ySO5r_v3plG8TcONL-tDoNxEGf2b2OVuKaHIme6lBVQC4U4fTqzvZMCkOswlW2QgM50JU",
-    "alt": "Descripción corta del proyecto 2",
-    "link": "#"
+    "name": "Meownder",
+    "description": "Cat Tinder Clone",
+    "image": "https://ik.imagekit.io/ur4olhqhr/Portfolio/meownder-api.png?updatedAt=1759399991984",
+    "link": "/projects/meownder"
   },
   {
-    "name": "Proyecto 2",
-    "description": "Descripción corta del proyecto 2",
-    "image": "https://via.placeholder.com/400x300",
-    "alt": "Descripción corta del proyecto 2",
-    "link": "#"
+    "name": "Shrimp Prices",
+    "description": "Shrimp Price Predictor",
+    "image": "https://github.com/ChrisTheAbysswalker/precio-camaron/raw/main/docs/img1.png",
+    "link": "/projects/shrimp"
   },
   {
-    "name": "Proyecto 3",
-    "description": "Descripción corta del proyecto 3",
-    "image": "https://via.placeholder.com/400x300",
-    "alt": "Descripción corta del proyecto 2",
-    "link": "#"
+    "name": "Spotify To Tidal",
+    "description": "Converts your Spotify playlist to a Tidal playlist",
+    "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-home.png?updatedAt=1759834686958",
+    "link": "/projects/spotify-to-tidal"
   }
 ]

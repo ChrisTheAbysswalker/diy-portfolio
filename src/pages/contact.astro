@@ -1,4 +1,5 @@
 ---
+import ArticleDivider from "@components/ArticleDivider.astro";
 import Layout from "@layouts/Layout.astro";
 
 const title = "Contact";
@@ -7,47 +8,73 @@ const title = "Contact";
 <Layout title={title}>
 
   <!-- ARTICLE CONTENT -->
-  <article class="max-w-5xl mx-auto px-6 py-16 flex flex-col space-y-12">
+  <article class="max-w-4xl mx-auto px-6 py-20 flex flex-col space-y-16">
 
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white uppercase tracking-widest text-center drop-shadow-lg px-4">
+    <!-- TÍTULO PRINCIPAL -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white uppercase tracking-[0.3em] text-center drop-shadow-lg">
       Contact
     </h1>
 
-    <!-- TEXTO INICIAL -->
-    <div class="space-y-4 text-lg md:text-xl leading-relaxed text-gray-300">
-      <p><strong>sabukaru.online</strong> connects people with culture, products with context, subcultures with eras, and artists with the world.</p>
-      <p>The magazine is based in Tokyo; the content is global.</p>
-      <p>The inner sabukaru team spans a worldwide network of industry insiders, experts, writers, and creatives.</p>
+    <!-- INTRO / DESCRIPCIÓN -->
+    <div class="space-y-5 text-lg md:text-xl leading-relaxed text-gray-300 text-start">
+      <p>I'm always open to new opportunities, collaborations, or just a friendly chat about design, development, or creative technology.</p>
+      <p>If you’d like to get in touch, feel free to reach out through the form below or connect via email or social media.</p>
     </div>
 
-    <!-- IMAGEN CENTRAL (Opcional) -->
-    <img 
-      src="https://substackcdn.com/image/fetch/$s_!5j8R!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac8c5156-fe9f-4fe7-ae6b-45a2ff2b5dbf_1000x635.jpeg" 
-      alt="Sonic Youth" 
-      class="w-full rounded-2xl shadow-lg object-cover"
-    />
+    <!-- FORMULARIO DE CONTACTO -->
+    <form 
+      action="https://formspree.io/f/xvgwboak" 
+      method="POST" 
+      class="flex flex-col space-y-6 text-gray-300 max-w-2xl mx-auto w-full"
+    >
+      <label class="flex flex-col space-y-2">
+        <span class="uppercase tracking-wider text-sm text-gray-400">Name</span>
+        <input 
+          type="text" 
+          name="name" 
+          required 
+          class="bg-transparent border-b border-gray-500 focus:border-indigo-600 outline-none py-2 transition-colors"
+        />
+      </label>
 
-    <form action="https://formsubmit.co/74ca3b9d27d9b8a57d8001415fccb4ae" method="POST" class="contact-form">
-        <label>Name <span>(required)</span></label>
+      <label class="flex flex-col space-y-2">
+        <span class="uppercase tracking-wider text-sm text-gray-400">Email</span>
+        <input 
+          type="email" 
+          name="email" 
+          required 
+          class="bg-transparent border-b border-gray-500 focus:border-indigo-600 outline-none py-2 transition-colors"
+        />
+      </label>
 
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" name="name" required>
+      <label class="flex flex-col space-y-2">
+        <span class="uppercase tracking-wider text-sm text-gray-400">Message</span>
+        <textarea 
+          name="message" 
+          rows="5" 
+          required 
+          class="bg-transparent border-b border-gray-500 focus:border-indigo-600 outline-none py-2 resize-none transition-colors"
+        ></textarea>
+      </label>
 
-        <label for="email">Email <span>(required)</span></label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message <span>(required)</span> </label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <!-- Opcional: evitar spam -->
-        <input type="hidden" name="_captcha" value="false">
-        <!-- Redirección después de enviar -->
-        <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-
-        <button type="submit">Enviar</button>
+      <button 
+        type="submit" 
+        class="uppercase tracking-widest font-semibold text-white border border-indigo-600 px-6 py-3 hover:border-indigo-600 hover:text-indigo-100 transition-colors duration-300 hover:scale-105 self-center"
+      >
+        Send
+      </button>
     </form>
 
-    <div class="h-px bg-white"></div>
+    <!-- OPCIONAL: ENLACES DE CONTACTO DIRECTO -->
+    <div class="text-center space-y-3 text-gray-400">
+      <p>Or email me directly at <a href="mailto:chris.zamc.89@gmail.com" class="text-indigo-200 hover:underline">chris.zamc.89@gmail.com</a></p>
+      <p>Follow my work on 
+        <a href="https://github.com/ChrisTheAbysswalker" class="text-indigo-400 hover:underline">GitHub</a> 
+          <!-- <a href="https://www.linkedin.com/" class="text-indigo-400 hover:underline">LinkedIn</a> -->
+      </p>
+    </div>
+
+    <ArticleDivider />
 
   </article>
 

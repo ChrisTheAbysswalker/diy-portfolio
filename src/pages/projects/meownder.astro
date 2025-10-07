@@ -1,0 +1,168 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+
+const title = "Meownder";
+const heroImage = "https://ik.imagekit.io/ur4olhqhr/Portfolio/meownder-hero.png?updatedAt=1759827817722";
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+  <ArticleText>
+    <p>
+      <strong>Meownder</strong> is a playful, cat-themed web application
+      inspired by Tinder’s swiping experience.
+    </p>
+    <p>
+      Users can browse through adorable cat profiles and swipe left or right to
+      “like” or “dislike” them — combining lighthearted fun with an engaging
+      interactive interface.
+    </p>
+    <p>
+      This project was designed to experiment with modern UI/UX concepts and
+      showcase smooth front-end interactions paired with a robust backend
+      architecture.
+    </p>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+    <p>
+      <strong>Meownder</strong> simulates a playful matchmaking experience,
+      focusing on seamless transitions and user engagement. The interface
+      dynamically fetches cat profiles from the backend API and displays them in
+      a swipeable card layout, offering both fluid motion and clear interaction
+      feedback.
+    </p>
+    <p>
+      The project also served as an experiment in integrating multiple
+      technologies across the stack — connecting a modern React front end with a
+      <strong>Go (Gin)</strong>-based backend through RESTful APIs. This
+      architecture emphasizes <strong>modularity, speed, and clarity</strong> in
+      communication between services.
+    </p>
+  </ArticleText>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+    <ArticleImage
+      src="https://ik.imagekit.io/ur4olhqhr/Portfolio/meownder-ui.png"
+      alt="Meownder User Interface"
+      center={true}
+      width="max-w-sm"
+      class="aspect-[3/5] object-fill"
+    />
+
+    <ArticleImage
+      src="https://ik.imagekit.io/ur4olhqhr/Portfolio/meownder-api-ui.png?updatedAt=1759828676561"
+      alt="Meownder API Dashboard"
+      center={true}
+      width="max-w-sm"
+      class="aspect-[3/5] object-fill"
+    />
+  </div>
+
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Technical Stack</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>
+        <strong>Frontend:</strong> Built with React and Vite using Tailwind CSS,
+        deployed on <strong>Vercel</strong>.
+      </li>
+      <li>
+        <strong>Backend:</strong> Developed in <strong>Go</strong> using the
+        <strong>Gin</strong> framework for a clean and efficient REST API.
+      </li>
+      <li>
+        <strong>API Hosting:</strong> Deployed on <strong>Render</strong> for
+        reliability and performance.
+      </li>
+      <li>
+        <strong>Design Focus:</strong> Smooth transitions, responsive layout,
+        and a minimalist UI approach.
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Key Learnings</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Designing smooth, responsive UI/UX interactions inspired by real-world applications (Tinder-style swiping).</li>
+      <li>Integrating a robust Go backend (Gin) with a modern JavaScript frontend for seamless full-stack development.</li>
+      <li>Handling API requests efficiently to ensure fast and reliable communication between frontend and backend.</li>
+      <li>Emphasizing scalable architecture while maintaining lightweight, user-friendly interfaces.</li>
+      <li>Balancing playful design with technical precision to deliver both engaging and functional web experiences.</li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Repositories</h2>
+    <p>
+      Explore the project source code and architecture documentation on GitHub:
+    </p>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/meownder-frontend"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+          >Frontend Repository</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/meownder-backend"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+          >Backend Repository</a
+        >
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Live Project</h2>
+    <p>Try the live version of Meownder:</p>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://meownder-frontend.vercel.app/"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+          >Meownder on Vercel</a
+        >
+        – Explore the interactive web experience.
+      </li>
+      <li>
+        <a
+          href="https://meownder-backend.onrender.com/"
+          class="text-indigo-600 hover:underline"
+          target="_blank"
+          >API on Render</a
+        >
+        – Powered by Go and the Gin framework.
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <p class="italic text-gray-600">
+      Meownder combines humor and design experimentation with technical
+      precision — showcasing how thoughtful UX and efficient backend logic can
+      coexist in a playful, production-ready web app.
+    </p>
+  </ArticleText>
+</ArticleLayout>
