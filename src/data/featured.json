@@ -1,20 +1,23 @@
 [
   {
     "name": "Meownder",
-    "description": "Cat Tinder Clone",
+    "description": "Cat Themed Tinder Clone",
     "image": "https://ik.imagekit.io/ur4olhqhr/Portfolio/meownder-api.png?updatedAt=1759399991984",
-    "link": "/projects/meownder"
+    "link": "/projects/meownder",
+    "category": "React, Go, Web, Fullstack, Backend"
   },
   {
     "name": "Shrimp Prices",
     "description": "Shrimp Price Predictor",
     "image": "https://github.com/ChrisTheAbysswalker/precio-camaron/raw/main/docs/img1.png",
-    "link": "/projects/shrimp"
+    "link": "/projects/shrimp",
+    "category": "Python, Machine Learning, Data Science"
   },
   {
     "name": "Spotify To Tidal",
     "description": "Converts your Spotify playlist to a Tidal playlist",
     "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-home.png?updatedAt=1759834686958",
-    "link": "/projects/spotify-to-tidal"
+    "link": "/projects/spotify-to-tidal",
+    "category": "Python, FastAPI, Jinja, AlpineJS, TailwindCSS"
   }
 ]

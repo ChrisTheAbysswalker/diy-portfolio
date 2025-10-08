@@ -1,0 +1,23 @@
+---
+// Props
+interface Props {
+  images: { src: string; alt: string }[];
+  minWidth?: string; // ancho mínimo de cada imagen (Tailwind)
+  aspectRatio?: string; // proporción de la imagen
+}
+
+const { images, minWidth = "250px", aspectRatio = "3/5" } = Astro.props;
+---
+
+<div class="grid gap-6 justify-items-center"
+     style={`grid-template-columns: repeat(auto-fit, minmax(${minWidth}, 1fr));`}>
+  {images.map((img) => (
+    <div class={`w-full aspect-[${aspectRatio}]`}>
+      <img
+        src={img.src}
+        alt={img.alt}
+        class="w-full h-full object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+  ))}
+</div>

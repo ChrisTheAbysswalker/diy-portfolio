@@ -1,0 +1,83 @@
+---
+interface Card {
+    name: string;
+    description: string;
+    image: string;
+    link?: string;
+    category?: string;
+}
+interface Props {
+    cardData: Card[];
+}
+const { cardData } = Astro.props;
+---
+
+<div class="p-2 md:p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+        
+        {cardData.map((card) => (
+            <a href={card.link || '#'} class="card-container block relative overflow-hidden card-overlay group cursor-pointer">
+                <img src={card.image} alt={card.name} class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                <div class="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 text-right">
+                    {card.category && <h3 class="text-xs uppercase card-category mb-1">{card.category}</h3>}
+                    <h1 class="card-title text-xl md:text-2xl leading-tight mb-2">
+                        {card.name}
+                    </h1>
+                    <p class="card-description">{card.description}</p>
+                </div>
+            </a>
+        ))}
+
+    </div>
+</div>
+
+<style>
+    .card-container {
+        min-height: 521px;
+        max-height: 633px;
+    }
+    .card-overlay::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.85), transparent 50%);
+        transition: background 0.3s ease;
+    }
+    .card-overlay:hover::after {
+        background: linear-gradient(to top, rgba(0,0,0,0.95), transparent 60%);
+    }
+    
+    @media (min-width: 768px) {
+        .card-container:nth-child(3n) {
+            grid-column: span 2 / span 2; /
+            height: 20rem; 
+        }
+        .card-container:nth-child(3n) .card-title {
+            font-size: 1.875rem; 
+            line-height: 2.25rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card-container:nth-child(3n) {
+            grid-column: auto;
+            height: 24rem; 
+        }
+         .card-container:nth-child(3n) .card-title {
+            font-size: 1.5rem; 
+            line-height: 2rem;
+        }
+
+        .card-container:nth-child(4n) {
+            grid-column: span 3 / span 3; 
+            height: 20rem; 
+        }
+        .card-container:nth-child(4n) .card-title {
+            font-size: 2.25rem; 
+            line-height: 2.5rem;
+        }
+    }
+</style>
+

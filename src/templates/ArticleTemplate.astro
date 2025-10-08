@@ -1,0 +1,171 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+import type { HTMLAttributes } from "astro/types";
+
+// Tipos para las props
+interface Link {
+  href: string;
+  text: string;
+  description?: string;
+}
+
+interface Image {
+  src: string;
+  alt: string;
+  className?: HTMLAttributes<"img">["class"];
+}
+
+interface Props {
+  // Metadatos principales
+  title: string;
+  heroImage: string;
+
+  // Contenido de las secciones
+  introduction: string;
+  overviewContent: string;
+  techStackList: string[]; // Lista de items para la pila tecnológica
+  repositoryLinks?: Link[]; // Lista de enlaces de repositorios
+  liveProjectLinks?: Link[]; // Lista de enlaces del proyecto en vivo
+  imageGrid?: Image[]; // Opcional: para el bloque de imágenes
+  footerNote?: string;
+}
+
+// Destructuración de props
+const {
+  title,
+  heroImage,
+  introduction,
+  overviewContent,
+  techStackList,
+  repositoryLinks = [],
+  liveProjectLinks = [],
+  imageGrid = [],
+  footerNote = "",
+} = Astro.props;
+
+// Estilos base para el contenedor de ArticleText
+const h2Classes = "text-2xl font-semibold mb-4";
+const ulClasses = "list-disc pl-6 space-y-1";
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+  <!-- INTRODUCCIÓN -->
+  <ArticleText>
+    <p set:html={introduction} />
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <!-- VISIÓN GENERAL DEL PROYECTO -->
+  <ArticleText>
+    <h2 class={h2Classes}>Project Overview</h2>
+    <p set:html={overviewContent} />
+  </ArticleText>
+
+  <!-- GRID DE IMÁGENES (Opcional) -->
+  {
+    imageGrid.length > 0 && (
+      <>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+          {imageGrid.map((img) => (
+            <ArticleImage
+              src={img.src}
+              alt={img.alt}
+              center={true}
+              width="max-w-sm"
+              class={img.className || "aspect-[3/5] object-fill"}
+            />
+          ))}
+        </div>
+        <ArticleDivider />
+      </>
+    )
+  }
+  
+  <!-- CONTENIDO PERSONALIZADO ADICIONAL (Slot) -->
+  <!-- Esto permite al usuario inyectar cualquier contenido extra entre el Overview y el Stack -->
+  <slot />
+
+  <!-- STACK TECNOLÓGICO -->
+  <ArticleText>
+    <h2 class={h2Classes}>Technical Stack</h2>
+    <ul class={ulClasses}>
+      {techStackList.map((item) => (
+        <li>
+          <p set:html={item} />
+        </li>
+      ))}
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <!-- REPOSITORIOS (Si hay enlaces) -->
+  {
+    repositoryLinks.length > 0 && (
+      <>
+        <ArticleText>
+          <h2 class={h2Classes}>Repositories</h2>
+          <p>
+            Explore the project source code and architecture documentation on GitHub:
+          </p>
+          <ul class={ulClasses}>
+            {repositoryLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-indigo-600 hover:underline"
+                  target="_blank"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </ArticleText>
+        <ArticleDivider />
+      </>
+    )
+  }
+
+  <!-- PROYECTO EN VIVO (Si hay enlaces) -->
+  {
+    liveProjectLinks.length > 0 && (
+      <>
+        <ArticleText>
+          <h2 class={h2Classes}>Live Project</h2>
+          <p>Try the live version of the project:</p>
+          <ul class={ulClasses}>
+            {liveProjectLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-indigo-600 hover:underline"
+                  target="_blank"
+                >
+                  {link.text}
+                </a>
+                {link.description && (
+                  <>
+                    {" "}
+                    – <span set:html={link.description} />
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </ArticleText>
+        <ArticleDivider />
+      </>
+    )
+  }
+
+  <!-- NOTA FINAL (Si existe) -->
+  <ArticleText>
+    <p class="italic text-gray-600" set:html={footerNote} />
+  </ArticleText>
+</ArticleLayout>
+---
