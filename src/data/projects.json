@@ -19,5 +19,12 @@
     "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/SpotifyToTidal/spotifitotidal-home.png?updatedAt=1759834686958",
     "link": "/projects/spotify-to-tidal",
     "tags" : ["python", "fastapi", "jinja", "alpinejs", "tailwindcss"]
+  },
+  {
+    "name": "C# 8086 Compiler",
+    "description": "Compiles invented language to 8086 assembly",
+    "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/Interpreter/1.png?updatedAt=1761643523015",
+    "link": "/projects/interpreter",
+    "tags": ["c#", ".net core", "desktop", "winforms"]
   }
 ]
