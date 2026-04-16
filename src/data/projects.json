@@ -26,5 +26,12 @@
     "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/Interpreter/1.png?updatedAt=1761643523015",
     "link": "/projects/interpreter",
     "tags": ["c#", ".net core", "desktop", "winforms"]
+  },
+  {
+    "name": "Rootly",
+    "description": "Professional botanical management and inventory platform.",
+    "image": "https://ik.imagekit.io/ur4olhqhr/Proyects/Rootly/cover.png?updatedAt=1776339026974",
+    "link": "/projects/rootly",
+    "tags": ["go", "react", "gorm", "gin", "vite", "postgres", "tailwindCSS", "jwt", "bcrypt"]
   }
 ]

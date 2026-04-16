@@ -1,0 +1,239 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import ArticleText from "@components/ArticleText.astro";
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleDivider from "@components/ArticleDivider.astro";
+
+const title = "Rootly";
+const heroImage = "https://ik.imagekit.io/ur4olhqhr/Proyects/Rootly/cover.png?updatedAt=1776339026974";
+---
+
+<ArticleLayout title={title} heroImage={heroImage}>
+  <ArticleText>
+    <p>
+      <strong>Rootly</strong> is a specialized botanical management and inventory
+      platform designed for detailed tracking of plant species, health records, and
+      expert staff administration.
+    </p>
+    <p>
+      It serves as a centralized hub for technical plant data, allowing users to
+      automate ecosystem monitoring and maintain a professional-grade digital
+      herbarium.
+    </p>
+    <p>
+      The project highlights a transition from monolithic logic to a
+      service-oriented architecture, emphasizing <strong
+        >scalability, modularity, and high availability</strong
+      > in a full-stack environment.
+    </p>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+    <p>
+      Rootly is built as a robust <strong>RESTful API</strong> using <strong
+        >Go</strong
+      >, paired with a modern, responsive <strong>React</strong> frontend. The system
+      focuses on the precise management of relational data—mapping the complex relationships
+      between botanical entities and their historical health logs.
+    </p>
+    <p>
+      On the backend, the architecture follows a strict separation of concerns
+      through services, controllers, and persistent models. The frontend
+      complements this with a utility-first design approach, ensuring that
+      complex botanical data is presented through a clean, intuitive interface.
+    </p>
+  </ArticleText>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+    <div>
+
+    <ArticleImage
+      src="https://ik.imagekit.io/ur4olhqhr/Proyects/Rootly/rootly-1.png?updatedAt=1776338380095"
+      alt="Rootly Botanical Dashboard"
+      center={true}
+      width="w-full"
+      class="aspect-[3/5] object-fill"
+    />
+    </div>
+    <div>
+
+    <ArticleImage
+      src="https://ik.imagekit.io/ur4olhqhr/Proyects/Rootly/rootly-2.png?updatedAt=1776338380086"
+      alt="Rootly Inventory Management"
+      center={true}
+      width="w-full"
+      class="aspect-[3/5] object-fill"
+    />
+    </div>
+    <div>
+
+    <ArticleImage
+      src="https://ik.imagekit.io/ur4olhqhr/Proyects/Rootly/rootly-3.png?updatedAt=1776338379882"
+      alt="Staff Data"
+      center={true}
+      width="w-full"
+      class="aspect-[3/5] object-fill"
+    />
+    </div>
+
+  </div>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Technical Stack</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>
+        <strong>Backend:</strong> Developed in <strong>Go (v1.24.5)</strong> using
+        the <strong>Gin Gonic</strong> framework for high-performance API routing
+        and <strong>GORM</strong> for efficient PostgreSQL orchestration.
+      </li>
+      <li>
+        <strong>Frontend:</strong> Built with <strong>React</strong> and <strong
+          >Vite</strong
+        >, utilizing <strong>Tailwind CSS</strong> for a utility-first styling approach
+        and <strong>Lucide React</strong> for iconography.
+      </li>
+      <li>
+        <strong>Security:</strong> Implemented <strong
+          >JWT (JSON Web Tokens)</strong
+        > for secure session management and <strong>Bcrypt</strong> for industrial-grade
+        password hashing.
+      </li>
+      <li>
+        <strong>Database:</strong>
+        <strong>PostgreSQL</strong> serves as the primary relational engine, handling
+        complex botanical schemas and historical records.
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Key Learnings</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>
+        <strong>Clean Architecture in Go:</strong> Implementing service-oriented
+        patterns to decouple business logic from infrastructure, facilitating easier
+        maintenance.
+      </li>
+      <li>
+        <strong>Advanced API Security:</strong> Mastering Middleware for route protection,
+        token validation, and structural data verification to ensure system integrity.
+      </li>
+      <li>
+        <strong>Modern Frontend Tooling:</strong> Setting up an optimized React environment
+        with Vite and managing client-side routing and JWT decoding for a seamless
+        UX.
+      </li>
+      <li>
+        <strong>Relational Data Modeling:</strong> Designing complex database schemas
+        to track plant evolution, health history, and personnel assignments.
+      </li>
+      <li>
+        <strong>Code Quality & Scalability:</strong> Maintaining high standards through
+        ESLint and modular folder structures (api, components, layouts) in both the
+        frontend and backend.
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">
+      Technical Challenges & Solutions
+    </h2>
+    <div class="space-y-6">
+      <div>
+        <strong>1. Architectural Evolution</strong>
+        <p>
+          Moving from a monolithic structure to a <strong
+            >Service-Oriented Architecture</strong
+          > in Go was the biggest challenge. By decoupling the logic, I ensured that
+          the database (GORM) and the HTTP layer (Gin) don't "know" about each other,
+          making the system easier to test and scale.
+        </p>
+      </div>
+
+      <div>
+        <strong>2. Relational Data Integrity</strong>
+        <p>
+          Mapping the relationship between plant species and their historical
+          health logs required a deep dive into <strong
+            >PostgreSQL associations</strong
+          >. I implemented structural validators in Go to ensure that every
+          health entry is correctly linked to a valid species ID, preventing
+          orphaned data.
+        </p>
+      </div>
+
+      <div>
+       <strong>3. Secure Session Management</strong>
+        <p>
+          Synchronizing <strong>JWT authentication</strong> between a Go backend
+          and a React frontend required careful handling of token expiration and
+          client-side decoding. I used <code>jwt-decode</code> on the frontend to
+          manage user states and implemented custom Middlewares in Go to protect
+          sensitive botanical records.
+        </p>
+      </div>
+    </div>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Repositories</h2>
+    <p>
+      Explore the complete source code and technical documentation on GitHub:
+    </p>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/rootly-frontend"
+          class="text-indigo-600 hover:underline"
+          target="_blank">Frontend Repository</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/ChrisTheAbysswalker/rootly-backend"
+          class="text-indigo-600 hover:underline"
+          target="_blank">Backend Repository</a
+        >
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <h2 class="text-2xl font-semibold mb-4">Live Project</h2>
+    <p>Try the live version of Rootly:</p>
+    <ul class="list-disc pl-5">
+      <li>
+        <a
+          href="https://rootly-frontend.pages.dev/"
+          class="text-indigo-600 hover:underline"
+          target="_blank">Rootly on Cloudflare</a
+        >
+        – Explore the interactive web experience.
+      </li>
+    </ul>
+  </ArticleText>
+
+  <ArticleDivider />
+
+  <ArticleText>
+    <p class="italic text-gray-600">
+      Rootly stands as a testament to the power of modern stacks—combining the
+      performance of Go with the flexibility of React to create a professional
+      tool for the botanical community.
+    </p>
+  </ArticleText>
+</ArticleLayout>
